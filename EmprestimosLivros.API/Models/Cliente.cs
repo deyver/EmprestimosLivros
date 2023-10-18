@@ -11,6 +11,7 @@ namespace EmprestimosLivros.API.Models;
 public partial class Cliente
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
     public int Id { get; set; }
 
