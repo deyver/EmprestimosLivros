@@ -21,6 +21,7 @@ namespace EmprestimosLivros.API.Controllers
         {
             return Ok(await _clienteRepository.SelecionarTodos());
         }
+
         [HttpPost]
         public async Task<ActionResult> CadastrarCliente(Cliente cliente)
         {
