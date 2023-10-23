@@ -21,28 +21,18 @@ public partial class ControleEmprestimoLivroContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Cliente>(entity =>
-        {
-            entity.Property(e => e.Id).ValueGeneratedNever();
-        });
-
-        modelBuilder.Entity<Livro>(entity =>
-        {
-            entity.Property(e => e.Id).ValueGeneratedNever();
-        });
-
         modelBuilder.Entity<LivroClienteEmprestimo>(entity =>
-        {
-            entity.Property(e => e.Id).ValueGeneratedNever();
+{
+    entity.Property(e => e.Id).ValueGeneratedNever();
 
-            entity.HasOne(d => d.LceIdClienteNavigation).WithMany(p => p.LivroClienteEmprestimo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Livro_Cliente_Emprestimo_Cliente");
+    entity.HasOne(d => d.LceIdClienteNavigation).WithMany(p => p.LivroClienteEmprestimo)
+        .OnDelete(DeleteBehavior.ClientSetNull)
+        .HasConstraintName("FK_Livro_Cliente_Emprestimo_Cliente");
 
-            entity.HasOne(d => d.LceIdLivroNavigation).WithMany(p => p.LivroClienteEmprestimo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Livro_Cliente_Emprestimo_Livro");
-        });
+    entity.HasOne(d => d.LceIdLivroNavigation).WithMany(p => p.LivroClienteEmprestimo)
+        .OnDelete(DeleteBehavior.ClientSetNull)
+        .HasConstraintName("FK_Livro_Cliente_Emprestimo_Livro");
+});
 
         OnModelCreatingPartial(modelBuilder);
     }

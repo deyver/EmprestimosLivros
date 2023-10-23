@@ -22,43 +22,43 @@ public partial class Cliente
 
     [Required]
     [Column("cliNome")]
-    [StringLength(14)]
+    [StringLength(200)]
     [Unicode(false)]
     public string CliNome { get; set; }
 
     [Required]
     [Column("cliEndereco")]
-    [StringLength(14)]
+    [StringLength(200)]
     [Unicode(false)]
     public string CliEndereco { get; set; }
 
     [Required]
     [Column("cliCidade")]
-    [StringLength(14)]
+    [StringLength(200)]
     [Unicode(false)]
     public string CliCidade { get; set; }
 
     [Required]
     [Column("cliBairro")]
-    [StringLength(14)]
+    [StringLength(200)]
     [Unicode(false)]
     public string CliBairro { get; set; }
 
     [Required]
     [Column("cliNumero")]
-    [StringLength(14)]
+    [StringLength(20)]
     [Unicode(false)]
     public string CliNumero { get; set; }
 
     [Required]
     [Column("cliTelefoneCelular")]
-    [StringLength(14)]
+    [StringLength(20)]
     [Unicode(false)]
     public string CliTelefoneCelular { get; set; }
 
     [Required]
     [Column("cliTelefoneFixo")]
-    [StringLength(14)]
+    [StringLength(20)]
     [Unicode(false)]
     public string CliTelefoneFixo { get; set; }
 
